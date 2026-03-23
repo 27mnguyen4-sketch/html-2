@@ -1,0 +1,69 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #001f3f, #87CEEB);
+    background-attachment: fixed;
+    color: white;
+    min-height: 100vh;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #87CEEB;
+}
+
+.container {
+    padding: 50px;
+    text-align: center;
+}
+
+/* Folding and Fading Animation */
+.gallery-item {
+    width: 300px;
+    height: 200px;
+    margin: 20px;
+    display: inline-block;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    animation: foldFade 1.5s ease-out forwards;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+@keyframes foldFade {
+    0% {
+        opacity: 0;
+        transform: perspective(1000px) rotateX(-90deg);
+        clip-path: inset(0 0 100% 0);
+    }
+    100% {
+        opacity: 1;
+        transform: perspective(1000px) rotateX(0deg);
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+.profile-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 400px;
+    margin: 20px auto;
+}
